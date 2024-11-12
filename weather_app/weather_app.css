@@ -1,0 +1,11 @@
+#suggestions {
+    max-height: 200px;
+    overflow-y: auto;
+}
+#suggestions div {
+    padding: 8px;
+    cursor: pointer;
+}
+#suggestions div:hover {
+    background-color: #e0e7ff;
+}
