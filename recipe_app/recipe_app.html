@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Recipe App</title>
+        <script src="recipe_app.js" defer></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+            rel="stylesheet" />
+    </head>
+    <body class="bg-yellow-100">
+        <div class="container mx-auto p-4">
+            <!-- Header and Search Bar -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold">
+                    All the recipes you need, here!
+                </h1>
+                <button
+                    id="viewFavoritesButton"
+                    class="bg-gradient-to-r from-yellow-300 to-yellow-700 text-white px-4 py-2 rounded-full">
+                    Favorites
+                </button>
+            </div>
+            <div class="relative mb-8 flex">
+                <input
+                    id="searchBar"
+                    type="text"
+                    placeholder="Search recipes..."
+                    class="w-full p-2 rounded border border-gray-300" />
+                <button
+                    id="searchButton"
+                    class="ml-2 bg-gradient-to-r from-yellow-300 to-yellow-700 text-white px-4 py-2 rounded">
+                    Search
+                </button>
+                <div
+                    id="searchSuggestions"
+                    class="absolute left-0 top-full mt-1 w-full bg-white shadow-lg rounded z-10 hidden"></div>
+            </div>
+
+            <!-- Recipe List -->
+            <div
+                id="recipeContainer"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+            <!-- Recipe Modal -->
+            <!-- Recipe Modal -->
+            <div
+                id="recipeModal"
+                class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 hidden">
+                <div
+                    class="bg-white p-6 rounded-lg w-full max-w-lg mx-auto h-[80vh] overflow-y-auto">
+                    <button
+                        id="closeModalButton"
+                        class="float-right text-gray-500">
+                        ✕
+                    </button>
+                    <div id="recipeDetails" class="mt-4"></div>
+                    <button
+                        id="addToFavorites"
+                        class="bg-gradient-to-r from-yellow-300 to-yellow-700 text-white px-4 py-2 rounded mt-4">
+                        Add to Favorites
+                    </button>
+                </div>
+            </div>
+
+            <!-- Favorites Modal -->
+            <div
+                id="favoritesModal"
+                class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50">
+                <div class="bg-white p-6 rounded-lg w-3/4 lg:w-1/2">
+                    <button
+                        id="closeFavoritesButton"
+                        class="float-right text-gray-500">
+                        ✕
+                    </button>
+                    <h2 class="text-2xl font-semibold mb-4">Favorites</h2>
+                    <div id="favoritesContainer"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
