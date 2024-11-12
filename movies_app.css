@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#search-suggestions {
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+}

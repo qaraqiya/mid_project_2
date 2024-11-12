@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="movies_app.js" defer></script>
+        <link rel="stylesheet" href="/movies_app/output.css" />
+        <title>Movie App</title>
+    </head>
+    <body class="bg-fixed bg-top bg-cover bg-sky-100">
+        <section
+            id="header"
+            class="flex flex-row justify-center w-full h-44 mx-auto bg-gradient-to-r from-sky-700 via-sky-200 to-sky-800 rounded-b-3xl">
+            <div id="header__container" class="flex items-center">
+                <div
+                    id="search__container"
+                    class="flex flex-row w-full h-12 gap-x-6">
+                    <button
+                        id="home__button"
+                        class="flex items-center justify-center bg-sky-100 rounded-full w-10 h-10 outline outline-offset-4 outline-sky-500/50 hover:ring-2 hover:ring-sky-500">
+                        <img
+                            class="w-6 h-6"
+                            src="/movies_app/assets/icons8-home-24.png"
+                            alt="homeButton" />
+                    </button>
+                    <div id="search__bar" class="relative">
+                        <input
+                            class="bg-sky-100 rounded-lg min-w-[300px] max-w-[500px] w-auto h-10 outline outline-offset-4 outline-sky-500/50"
+                            type="text"
+                            id="searchBar"
+                            placeholder="  Search movie here..."
+                            oninput="this.style.width = Math.min(500, Math.max(300, this.value.length * 10)) + 'px';" />
+                        <!-- Suggestions list -->
+                        <div
+                            id="search-suggestions"
+                            class="absolute mt-2 w-full bg-white shadow-lg rounded-lg z-10 hidden"></div>
+                    </div>
+                    <button
+                        id="search__icon"
+                        class="flex items-center justify-center bg-sky-100 rounded-full w-10 h-10 outline outline-offset-4 outline-sky-500/50 hover:ring-2 hover:ring-sky-500">
+                        <img
+                            class="w-6 h-6"
+                            src="/movies_app/assets/search-svgrepo-com.svg"
+                            alt="searchButton" />
+                    </button>
+                    <button
+                        id="viewWatchlistButton"
+                        class="fixed top-4 right-4 bg-sky-500 text-white px-4 py-2 rounded">
+                        Watchlist
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movie Modal -->
+        <div
+            id="movieModal"
+            class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50">
+            <div class="bg-white rounded-lg w-3/4 lg:w-1/2 p-6">
+                <button
+                    id="exitButton"
+                    onclick="closeModal()"
+                    class="float-right text-gray-500">
+                    ✕
+                </button>
+                <div id="movieDetails" class="mt-4"></div>
+                <button
+                    id="addToWatchlist"
+                    class="bg-blue-500 text-white px-4 py-2 rounded mt-4">
+                    Add to Watchlist
+                </button>
+            </div>
+        </div>
+
+        <!-- Watchlist Modal -->
+        <div
+            id="watchlistModal"
+            class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center z-50">
+            <div class="bg-white rounded-lg w-3/4 lg:w-1/2 p-6">
+                <button
+                    id="exitButton"
+                    onclick="closeWatchlist()"
+                    class="float-right text-gray-500">
+                    ✕
+                </button>
+                <h2 class="text-2xl font-semibold mb-4">Watchlist</h2>
+                <div id="watchlistContainer"></div>
+            </div>
+        </div>
+
+        <section id="movies_gallery">
+            <div id="movie-container"></div>
+        </section>
+    </body>
+</html>
